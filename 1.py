@@ -5,7 +5,8 @@ unos_sirine_dasaka = grafika.Input(key="id_inputa")
 
 layout = [
     [grafika.Text("Širina dasaka: "), unos_sirine_dasaka],
-    [grafika.OK(key="ok_botun"), grafika.Exit()]
+    [grafika.OK(key="ok_botun"), grafika.Exit()],
+    [grafika.Text("", key="prikaz_rezultata")]
 ]
 
 prozor = grafika.Window("Kubiciranje for dummies", layout)
@@ -24,10 +25,11 @@ while True:
         try:
             pretvarac_u_broj = float(vrijednost_varijable)
 
-            ukupna_kubikaza = pretvarac_u_broj * duzina_daske_u_metrima * debljina_daske
-            print("Kubikaža je: ", ukupna_kubikaza, "m3.")
+            ukupna_kubikaza = round(
+                pretvarac_u_broj * duzina_daske_u_metrima * debljina_daske, 4)
+            prozor["prikaz_rezultata"].update(ukupna_kubikaza)
 
         except ValueError:
-            print("Piši brojeve.")
+            print("Ne prihvaćam string brate...")
 
 prozor.close()
