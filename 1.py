@@ -8,7 +8,7 @@ layout = [
     [grafika.OK(key="ok_botun"), grafika.Exit()]
 ]
 
-prozor = grafika.Window("Kubiciranje", layout)
+prozor = grafika.Window("Kubiciranje for dummies", layout)
 
 while True:
     klikovi, vrijednosti = prozor.read()
@@ -25,9 +25,9 @@ while True:
             pretvarac_u_broj = float(vrijednost_varijable)
 
             ukupna_kubikaza = pretvarac_u_broj * duzina_daske_u_metrima * debljina_daske
-            print("Kubikaža je: ", ukupna_kubikaza, "m3. Jeben ti boga")
+            print("Kubikaža je: ", ukupna_kubikaza, "m3.")
 
         except ValueError:
-            print("odjebi sa stringovima")
+            print("Piši brojeve.")
 
 prozor.close()
