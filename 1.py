@@ -1,4 +1,5 @@
 import PySimpleGUI as grafika
+# grafika.theme("Reddit")
 
 unos_sirine_dasaka = grafika.Input(key="id_inputa")
 
@@ -27,9 +28,12 @@ while True:
 
             ukupna_kubikaza = round(
                 pretvarac_u_broj * duzina_daske_u_metrima * debljina_daske, 4)
-            prozor["prikaz_rezultata"].update(ukupna_kubikaza)
+            prozor["prikaz_rezultata"].update(
+                ukupna_kubikaza)
 
         except ValueError:
-            print("Ne prihvaćam string brate...")
+            prozor["prikaz_rezultata"].update(
+                "Ne prihvaćam string brate...")
+
 
 prozor.close()
